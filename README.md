@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -64,7 +65,7 @@
         }
 
         function sayYes() {
-            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final permanece
+            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final no se mostrará en el álbum
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
@@ -72,9 +73,9 @@
         }
 
         function showAlbum() {
-            document.getElementById("albumImage").src = albumImages[photoIndex];
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("album").style.display = "block";
+            document.getElementById("albumImage").src = albumImages[photoIndex];
             document.getElementById("finalMessage").style.display = "none";  // Ocultar mensaje final
         }
 
