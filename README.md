@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -47,10 +46,9 @@
         <button onclick="showAlbum()">A continuación, un álbum de fotos</button>
     </div>
 
-    <div id="album" style="display: none;">
+    <div id="albumScreen" style="display: none;">
         <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
         <button id="nextButton" onclick="nextPhoto()">Siguiente</button>
-        <h2 id="finalMessage" style="display: none;">¡Gracias por ver el álbum!</h2>
     </div>
 
     <script>
@@ -73,11 +71,9 @@
         }
 
         function showAlbum() {
-            document.getElementById("nextStep").style.display = "none";
-            document.getElementById("album").style.display = "block";
-            // Solo mostrar las fotos del álbum, no la imagen final
+            document.getElementById("nextStep").style.display = "none"; // Ocultar la pantalla de pregunta
+            document.getElementById("albumScreen").style.display = "block"; // Mostrar pantalla de álbum
             document.getElementById("albumImage").src = albumImages[photoIndex];
-            document.getElementById("finalMessage").style.display = "none";  // Ocultar mensaje final
         }
 
         function nextPhoto() {
@@ -86,8 +82,7 @@
                 document.getElementById("albumImage").src = albumImages[photoIndex];
             }
             if (photoIndex === albumImages.length - 1) {
-                document.getElementById("nextButton").style.display = "none"; // Ocultar el botón al final
-                document.getElementById("finalMessage").style.display = "block"; // Mostrar mensaje final
+                document.getElementById("nextButton").style.display = "none"; // Ocultar botón después de la última foto
             }
         }
     </script>
