@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -63,7 +64,8 @@
         }
 
         function sayYes() {
-            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final solo cuando se dice "Sí"
+            // Cambiar la imagen al responder "Sí"
+            document.getElementById("image").src = "imagen_final.jpeg";  
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
@@ -71,8 +73,9 @@
         }
 
         function showAlbum() {
-            document.getElementById("nextStep").style.display = "none"; // Ocultar la pantalla de pregunta
-            document.getElementById("albumScreen").style.display = "block"; // Mostrar pantalla de álbum
+            // Ocultar la pantalla anterior y mostrar el álbum de fotos
+            document.getElementById("nextStep").style.display = "none"; 
+            document.getElementById("albumScreen").style.display = "block"; 
             document.getElementById("albumImage").src = albumImages[photoIndex];
         }
 
@@ -82,7 +85,7 @@
                 document.getElementById("albumImage").src = albumImages[photoIndex];
             }
             if (photoIndex === albumImages.length - 1) {
-                document.getElementById("nextButton").style.display = "none"; // Ocultar botón después de la última foto
+                document.getElementById("nextButton").style.display = "none"; // Ocultar el botón después de la última foto
             }
         }
     </script>
