@@ -49,12 +49,13 @@
     <div id="album" style="display: none;">
         <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
         <button id="nextButton" onclick="nextPhoto()">Siguiente</button>
+        <h2 id="finalMessage" style="display: none;">Falta actualizar con más</h2>
     </div>
 
     <script>
         let noClickCount = 0;
         const images = ["imagen1.jpeg", "imagen2.jpeg", "imagen3.jpeg"];
-        const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg"];
+        const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg", "foto5.jpeg"];
         let photoIndex = 0;
 
         function sayNo() {
@@ -63,6 +64,7 @@
         }
 
         function sayYes() {
+            document.getElementById("image").src = "imagen_final.jpeg";
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
@@ -82,6 +84,7 @@
             }
             if (photoIndex === albumImages.length - 1) {
                 document.getElementById("nextButton").style.display = "none";
+                document.getElementById("finalMessage").style.display = "block";
             }
         }
     </script>
