@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -42,20 +43,13 @@
     <button class="no" onclick="sayNo()">No</button>
 
     <div id="nextStep" style="display: none;">
-        <button onclick="showAlbum()">A continuación, un álbum de fotos</button>
-    </div>
-
-    <div id="album" style="display: none;">
-        <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
-        <button onclick="nextPhoto()">Siguiente</button>
-        <h2 id="finalMessage" style="display: none;">Falta actualizar con más</h2>
+        <button onclick="nextPhoto(0)">A continuación, un álbum de fotos</button>
     </div>
 
     <script>
         let noClickCount = 0;
         const images = ["imagen1.jpeg", "imagen2.jpeg", "imagen3.jpeg"];
         const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg", "foto5.jpeg"];
-        let photoIndex = 0;
 
         function sayNo() {
             noClickCount++;
@@ -70,19 +64,11 @@
             setTimeout(() => document.getElementById("nextStep").style.display = "block", 2000);
         }
 
-        function showAlbum() {
-            document.getElementById("nextStep").style.display = "none";
-            document.getElementById("album").style.display = "block";
-        }
-
-        function nextPhoto() {
-            photoIndex++;
-            if (photoIndex < albumImages.length) {
-                document.getElementById("albumImage").src = albumImages[photoIndex];
+        function nextPhoto(index) {
+            if (index < albumImages.length) {
+                window.location.href = `photo${index}.html`;
             } else {
-                document.getElementById("albumImage").style.display = "none";
-                document.querySelector("button").style.display = "none";
-                document.getElementById("finalMessage").style.display = "block";
+                window.location.href = "final.html";
             }
         }
     </script>
