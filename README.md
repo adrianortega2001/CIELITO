@@ -75,6 +75,7 @@
         function showAlbum() {
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("album").style.display = "block";
+            document.getElementById("albumImage").src = albumImages[photoIndex];
         }
 
         function nextPhoto() {
