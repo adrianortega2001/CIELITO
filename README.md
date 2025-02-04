@@ -1,4 +1,3 @@
-# cielo
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,14 +37,14 @@
     </style>
 </head>
 <body>
-    <img id="image" src="imagen1.jpg" alt="Imagen romántica">
+    <img id="image" src="imagen1.jpeg" alt="Imagen romántica">
     <h2 id="question">¿Quieres ser mi cita este 14 de febrero?</h2>
     <button class="yes" onclick="sayYes()">Sí</button>
     <button class="no" onclick="sayNo()">No</button>
 
     <script>
         let noClickCount = 0;
-        const images = ["imagen1.jpg", "imagen2.jpg", "imagen3.jpg"];
+        const images = ["imagen1.jpeg", "imagen2.jpeg", "imagen3.jpeg"];
 
         function sayNo() {
             noClickCount++;
@@ -53,7 +52,7 @@
         }
 
         function sayYes() {
-            document.getElementById("image").src = "imagen_final.jpg";
+            document.getElementById("image").src = "imagen_final.jpeg";
             document.getElementById("question").innerText = "Muchas gracias! Sabía que ibas a decir que sí. ¡Te amo!";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
