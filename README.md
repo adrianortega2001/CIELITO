@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -41,9 +42,16 @@
     <button class="yes" onclick="sayYes()">Sí</button>
     <button class="no" onclick="sayNo()">No</button>
 
+    <div id="album" style="display: none;">
+        <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
+        <button onclick="nextPhoto()">Siguiente</button>
+    </div>
+
     <script>
         let noClickCount = 0;
         const images = ["imagen1.jpeg", "imagen2.jpeg", "imagen3.jpeg"];
+        const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg", "foto5.jpeg"];
+        let photoIndex = 0;
 
         function sayNo() {
             noClickCount++;
@@ -55,6 +63,23 @@
             document.getElementById("question").innerText = "Muchas gracias! Sabía que ibas a decir que sí. ¡Te amo!";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
+            setTimeout(showAlbum, 2000);
+        }
+
+        function showAlbum() {
+            document.getElementById("album").style.display = "block";
+            document.getElementById("image").style.display = "none";
+            document.getElementById("question").style.display = "none";
+        }
+
+        function nextPhoto() {
+            photoIndex++;
+            if (photoIndex < albumImages.length) {
+                document.getElementById("albumImage").src = albumImages[photoIndex];
+            } else {
+                document.getElementById("albumImage").src = "falta_actualizar.jpeg";
+                document.querySelector("button").style.display = "none";
+            }
         }
     </script>
 </body>
