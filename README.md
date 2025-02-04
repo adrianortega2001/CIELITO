@@ -73,9 +73,9 @@
         }
 
         function showAlbum() {
+            document.getElementById("albumImage").src = albumImages[photoIndex];
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("album").style.display = "block";
-            document.getElementById("albumImage").src = albumImages[photoIndex];
             document.getElementById("finalMessage").style.display = "none";  // Ocultar mensaje final
         }
 
