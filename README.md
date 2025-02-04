@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -49,7 +50,6 @@
     <div id="album" style="display: none;">
         <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
         <button id="nextButton" onclick="nextPhoto()">Siguiente</button>
-        <h2 id="finalMessage" style="display: none;">Falta actualizar con más</h2>
     </div>
 
     <script>
@@ -64,7 +64,6 @@
         }
 
         function sayYes() {
-            document.getElementById("image").src = "imagen_final.jpeg";
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
@@ -84,7 +83,6 @@
             }
             if (photoIndex === albumImages.length - 1) {
                 document.getElementById("nextButton").style.display = "none";
-                document.getElementById("finalMessage").style.display = "block";
             }
         }
     </script>
