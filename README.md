@@ -55,7 +55,7 @@
     <script>
         let noClickCount = 0;
         const images = ["imagen1.jpeg", "imagen2.jpeg", "imagen3.jpeg"];
-        const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg", "foto5.jpeg"];
+        const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg"];
         let photoIndex = 0;
 
         function sayNo() {
