@@ -65,7 +65,7 @@
 
         function sayYes() {
             // Cambiar la imagen al responder "Sí" y ocultar botones
-            document.getElementById("image").src = "imagen_final.jpeg";
+            document.getElementById("image").src = "imagen_final.jpeg"; // Esto solo ocurre al responder "Sí"
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
@@ -73,7 +73,7 @@
         }
 
         function showAlbum() {
-            // Ocultar la pantalla anterior y mostrar el álbum de fotos
+            // Ocultar la pantalla de la pregunta y mostrar el álbum de fotos
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("albumScreen").style.display = "block";
             // Reiniciar el índice de fotos al mostrar el álbum
