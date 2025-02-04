@@ -50,6 +50,7 @@
     <div id="album" style="display: none;">
         <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
         <button id="nextButton" onclick="nextPhoto()">Siguiente</button>
+        <h2 id="finalMessage" style="display: none;">¡Gracias por ver el álbum!</h2>
     </div>
 
     <script>
@@ -75,6 +76,7 @@
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("album").style.display = "block";
             document.getElementById("albumImage").src = albumImages[photoIndex];
+            document.getElementById("finalMessage").style.display = "none";  // Ocultar mensaje final
         }
 
         function nextPhoto() {
@@ -84,6 +86,7 @@
             }
             if (photoIndex === albumImages.length - 1) {
                 document.getElementById("nextButton").style.display = "none"; // Ocultar el botón al final
+                document.getElementById("finalMessage").style.display = "block"; // Mostrar mensaje final
             }
         }
     </script>
