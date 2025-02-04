@@ -65,7 +65,7 @@
         }
 
         function sayYes() {
-            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final no se mostrará en el álbum
+            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final solo al elegir "Sí"
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
