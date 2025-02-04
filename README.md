@@ -37,6 +37,7 @@
     </style>
 </head>
 <body>
+    <!-- Imagen principal que siempre estará visible -->
     <img id="image" src="imagen1.jpeg" alt="Imagen romántica">
     <h2 id="question">¿Quieres ser mi cita este 14 de febrero?</h2>
     <button class="yes" onclick="sayYes()">Sí</button>
@@ -48,8 +49,10 @@
     </div>
 
     <div id="albumScreen" style="display: none;">
+        <!-- Aquí se mostrarán las fotos del álbum -->
         <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
         <button id="nextButton" onclick="nextPhoto()">Siguiente</button>
+        <h2 id="finalMessage" style="display: none;">Falta actualizar con más</h2>
     </div>
 
     <script>
@@ -58,13 +61,14 @@
         const albumImages = ["foto1.jpeg", "foto2.jpeg", "foto3.jpeg", "foto4.jpeg", "foto5.jpeg"];
         let photoIndex = 0;
 
+        // Función cuando el usuario da clic en "No"
         function sayNo() {
             noClickCount++;
             document.getElementById("image").src = images[noClickCount % images.length];
         }
 
+        // Función cuando el usuario da clic en "Sí"
         function sayYes() {
-            // Cambiar la imagen al responder "Sí" y ocultar botones
             document.getElementById("image").src = "imagen_final.jpeg"; // Esto solo ocurre al responder "Sí"
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
@@ -72,15 +76,15 @@
             document.getElementById("nextStep").style.display = "block";
         }
 
+        // Función para mostrar el álbum de fotos
         function showAlbum() {
-            // Ocultar la pantalla de la pregunta y mostrar el álbum de fotos
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("albumScreen").style.display = "block";
-            // Reiniciar el índice de fotos al mostrar el álbum
             photoIndex = 0;
             document.getElementById("albumImage").src = albumImages[photoIndex];
         }
 
+        // Función para mostrar la siguiente foto en el álbum
         function nextPhoto() {
             photoIndex++;
             if (photoIndex < albumImages.length) {
@@ -88,6 +92,7 @@
             }
             if (photoIndex === albumImages.length - 1) {
                 document.getElementById("nextButton").style.display = "none"; // Ocultar el botón después de la última foto
+                document.getElementById("finalMessage").style.display = "block"; // Mostrar el mensaje "Falta actualizar con más"
             }
         }
     </script>
