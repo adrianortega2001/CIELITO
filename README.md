@@ -42,9 +42,14 @@
     <button class="yes" onclick="sayYes()">Sí</button>
     <button class="no" onclick="sayNo()">No</button>
 
+    <div id="nextStep" style="display: none;">
+        <button onclick="showAlbum()">A continuación, un álbum de fotos</button>
+    </div>
+
     <div id="album" style="display: none;">
         <img id="albumImage" src="foto1.jpeg" alt="Álbum de fotos">
         <button onclick="nextPhoto()">Siguiente</button>
+        <h2 id="finalMessage" style="display: none;">Falta actualizar con más</h2>
     </div>
 
     <script>
@@ -63,13 +68,12 @@
             document.getElementById("question").innerText = "Muchas gracias! Sabía que ibas a decir que sí. ¡Te amo!";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
-            setTimeout(showAlbum, 2000);
+            setTimeout(() => document.getElementById("nextStep").style.display = "block", 2000);
         }
 
         function showAlbum() {
+            document.getElementById("nextStep").style.display = "none";
             document.getElementById("album").style.display = "block";
-            document.getElementById("image").style.display = "none";
-            document.getElementById("question").style.display = "none";
         }
 
         function nextPhoto() {
@@ -77,8 +81,9 @@
             if (photoIndex < albumImages.length) {
                 document.getElementById("albumImage").src = albumImages[photoIndex];
             } else {
-                document.getElementById("albumImage").src = "falta_actualizar.jpeg";
+                document.getElementById("albumImage").style.display = "none";
                 document.querySelector("button").style.display = "none";
+                document.getElementById("finalMessage").style.display = "block";
             }
         }
     </script>
