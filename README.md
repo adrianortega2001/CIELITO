@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -64,7 +65,7 @@
         }
 
         function sayYes() {
-            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final solo al elegir "Sí"
+            document.getElementById("image").src = "imagen_final.jpeg";  // Imagen final solo cuando se dice "Sí"
             document.getElementById("question").style.display = "none";
             document.querySelector(".yes").style.display = "none";
             document.querySelector(".no").style.display = "none";
@@ -74,6 +75,7 @@
         function showAlbum() {
             document.getElementById("nextStep").style.display = "none";
             document.getElementById("album").style.display = "block";
+            // Solo mostrar las fotos del álbum, no la imagen final
             document.getElementById("albumImage").src = albumImages[photoIndex];
             document.getElementById("finalMessage").style.display = "none";  // Ocultar mensaje final
         }
