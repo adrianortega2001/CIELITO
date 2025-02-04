@@ -1,5 +1,4 @@
 # cielo
-<img id="image" src="img/imagen1.jpg" alt="Imagen romántica">
 <!DOCTYPE html>
 <html lang="es">
 <head>
